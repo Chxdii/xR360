@@ -23,10 +23,10 @@
 	var sky = document.querySelector('a-sky');
 	var index = Math.floor(Math.random() * images.length);
 	sky.setAttribute('src', '#' + images[index].id);
-	sky.setAttribute('animation', {property: 'rotation', to: '130 -130 0', loop: true, dur: 10000});
+	sky.setAttribute('animation', {property: 'rotation', to: '0 0 0', loop: true, dur: 10000});
 	window.addEventListener('click', function(e) {
 		index = (index + 1) % images.length;
 		sky.setAttribute('src', '#' + images[index].id);
-		sky.setAttribute('animation', {property: 'rotation', to: '130 -130 0', loop: true, dur: 10000});
+		sky.setAttribute('animation', {property: 'rotation', to: '0 0 0', loop: true, dur: 10000});
 	});
 </script>

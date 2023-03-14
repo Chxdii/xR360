@@ -65,20 +65,28 @@
 	<a-sky src="#img1" rotation="0 230 0" animation="property: rotation; to: 0 590 0; loop: true; dur: 10000"></a-sky>
 
 </a-scene>
-
 <script>
-  var images = document.querySelectorAll('a-assets img');
-  var sky = document.querySelector('a-sky');
-  var index = Math.floor(Math.random() * images.length);
-  
-  function changeImage() {
-    index = (index + 1) % images.length;
-    sky.setAttribute('src', '#' + images[index].id);
-    sky.setAttribute('animation', {property: 'rotation', to: '0 590 0', loop: true, dur: 20000});
-  }
+var images = document.querySelectorAll('a-assets img');
+var sky = document.querySelector('a-sky');
+var index = Math.floor(Math.random() * images.length);
 
+function changeImage() {
+  index = (index + 1) % images.length;
   sky.setAttribute('src', '#' + images[index].id);
   sky.setAttribute('animation', {property: 'rotation', to: '0 590 0', loop: true, dur: 20000});
-  window.addEventListener('click', changeImage);
+}
+
+function autoChangeImage() {
+  setInterval(function() {
+    changeImage();
+  }, 10000);
+}
+
+sky.setAttribute('src', '#' + images[index].id);
+sky.setAttribute('animation', {property: 'rotation', to: '0 590 0', loop: true, dur: 20000});
+
+window.addEventListener('click', changeImage);
+
+autoChangeImage();
 </script>
 

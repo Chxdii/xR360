@@ -67,18 +67,17 @@
 </a-scene>
 
 <script>
-var images = document.querySelectorAll('a-assets img');
-var sky = document.querySelector('a-sky');
-var index = Math.floor(Math.random() * images.length);
-sky.setAttribute('src', '#' + images[index].id);
-sky.setAttribute('animation', {property: 'rotation', to: '0 590 0', loop: true, dur: 5000});
-
-function changeImage() {
-  index = (index + 1) % images.length;
+  var images = document.querySelectorAll('a-assets img');
+  var sky = document.querySelector('a-sky');
+  var index = Math.floor(Math.random() * images.length);
   sky.setAttribute('src', '#' + images[index].id);
   sky.setAttribute('animation', {property: 'rotation', to: '0 590 0', loop: true, dur: 5000});
-}
 
-setInterval(changeImage, 5000); // Change image every 5 seconds
+  function changeImage() {
+    index = (index + 1) % images.length;
+    sky.setAttribute('src', '#' + images[index].id);
+    sky.setAttribute('animation', {property: 'rotation', to: '0 590 0', loop: true, dur: 5000});
+  }
 
+  setInterval(changeImage, 7500); // Change image every 5 seconds
 </script>

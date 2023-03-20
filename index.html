@@ -1,7 +1,26 @@
   <!-- chvdi.com 2023 -->
 
 <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
-<a-scene embedded>
+
+<a-scene loading-screen="template: custom-template">
+
+  <script type="text/html" id="custom-template">
+
+    <div style="background-color: #333; color: white; padding: 20px; text-align: center;">
+
+      <h2>Loading...</h2>
+
+      <p>Please wait while the scene is loading.</p>
+
+    </div>
+
+    <script>
+
+      setTimeout(function() {
+
+        document.querySelector('a-scene').loaded = true;
+
+      }, 5000);
 	<a-assets>
 		<img id="img1" src="https://raw.githubusercontent.com/Chxdii/xR360/main/img/x1.jpg" />
 		<img id="img2" src="https://raw.githubusercontent.com/Chxdii/xR360/main/img/x2.jpg" />
